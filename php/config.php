@@ -9,4 +9,5 @@
 	define("DB_USER", "root");
 	define("DB_PASS", "password");
 	define("DB_NAME", "billing");
+	//CHECKING THE CHANGES IN GIT GUI
 ?>
