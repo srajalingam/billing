@@ -5,9 +5,12 @@
  // get all the inserted item details on page load
 	$(window).on("load", function() {
 		$.ajax({
-			url : "php/request.php?msg=allItems",
-			type : "POST",
-			success : function(result) {
+			url: "php/request.php?c=items",
+			type: "POST",
+			data: {
+				mtd: "allItems"
+			},
+			success: function(result) {
 				var obj_result = $.parseJSON(result);
 				console.log(obj_result);
 				if(obj_result.status === "success") {
@@ -16,7 +19,7 @@
 						items.append("<tr>");
 						items.append("<td>"+value.name+"</td>");
 						items.append("<td>"+value.category+"</td>");
-						items.append("<td>"+value.sub_category+"</td>");
+						// items.append("<td>"+value.sub_category+"</td>");
 						items.append("<td>"+value.product+"</td>");
 						items.append("<td>"+value.quantity+"</td>");
 						items.append("<td>"+value.qty_unit+"</td>");
@@ -30,7 +33,7 @@
 					$("#status_message").html(obj_result.message);
 				}
 			},
-			error : function() {
+			error: function() {
 				alert("request not send");
 			}
 		});
@@ -39,7 +42,7 @@
 // validate and insert the new item
 	$("#item_submit").on("click", function(e) {
 		e.preventDefault();
-		itemValidation();
+		// itemValidation();
 		itemInsertion();
 	});
 	
@@ -52,9 +55,9 @@
 				"category":{
 					required:true
 				},
-				"sub_category":{
-					required:true
-				},
+				// "sub_category":{
+					// required:true
+				// },
 				"product":{
 					required:true
 				},
@@ -77,9 +80,9 @@
 				"category":{
 					required:"Please enter the category of item"
 				},
-				"sub_category":{
-					required:"Please enter the sub-category of item"
-				},
+				// "sub_category":{
+					// required:"Please enter the sub-category of item"
+				// },
 				"product":{
 					required:"Please enter the product of item"
 				},
@@ -101,9 +104,10 @@
 	
 	var itemInsertion = function() {
 		itemData = {
+			mtd: "addItem",
 			name: $("#name").val(),
 			category: $("#category").val(),
-			sub_category: $("#sub_category").val(),
+			// sub_category: $("#sub_category").val(),
 			product: $("#product").val(),
 			quantity: $("#quantity").val(),
 			qty_unit: $("#qty_unit").val(),
@@ -111,7 +115,7 @@
 		}
 		
 		$.ajax({
-			url: "php/request.php?msg=addItem",
+			url: "php/request.php?c=items",
 			type: "POST",
 			data: itemData,
 			success: function(result) {

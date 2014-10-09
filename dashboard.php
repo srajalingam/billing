@@ -2,7 +2,7 @@
 	<head>
 		<title>Shop & Bill</title>
 		<link rel="stylesheet" href="css/shop.css">
-		<link rel="stylesheet" href="css/stock.css">
+		<link rel="stylesheet" href="css/dashboard.css">
 		<script type="text/javascript" src="js/lib/jquery-1.9.1.js"></script>
 		<script type="text/javascript" src="js/lib/jquery.cookie.js"></script>
 	</head>
@@ -37,7 +37,24 @@
 				</div>
 			</div>
 			<div class="content">
-				
+				<div class="dashboard" id="billing">
+					Billing
+				</div>
+				<div class="dashboard" id="purchase">
+					Purchase
+				</div>
+				<div class="dashboard" id="stock">
+					Stock
+				</div>
+				<div class="dashboard" id="items">
+					Items
+				</div>
+				<div class="dashboard" id="analysis">
+					Analysis
+				</div>
+				<div class="dashboard" id="other">
+					Others
+				</div>
 			</div>
 			<div class="footer">
 				Footer

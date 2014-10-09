@@ -4,7 +4,11 @@
  
 	// get all registered shop details on page load
 	$(window).on("load", function() {
-		$.ajax({
+		if((typeof($.cookie("alert")) !== "undefined")) {
+			var alert = $.cookie("alert");
+			$("#alert_msg").html(alert);
+		}
+		/* $.ajax({
 			url : "php/request.php?msg=allShops",
 			type : "POST",
 			success : function(result) {
@@ -12,7 +16,7 @@
 				if(obj_result.status === "success") {
 					$.each(obj_result.message, function(key, value) {
 						var shop = $("#shop_details");
-						// $(shop).append("a").attr
+						$(shop).append("a").attr
 						var shop_name = $(shop).find("h3").html(value.name);
 						var owner = $(shop).find("label").append(value.owner);
 						var shop_address = $(shop).find("p").html(value.address);
@@ -27,7 +31,7 @@
 			error : function() {
 				alert("request not send");
 			}
-		});
+		}); */
 	});
 	
 	// shop registration details validation and ajax to insert the shop details	

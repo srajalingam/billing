@@ -1,0 +1,62 @@
+body {
+	height: auto;
+	/* width: 1250px; */
+	padding-left: 5px;
+	/* background-image: url("../images/bg.png"); */
+	background: #2f2f2f;
+}
+
+.content {
+	float: left;
+	/* margin: 20px; */
+	padding-top: 50%;
+}
+
+.shop_logo {
+	/* color: white;
+	float: left;
+	height: 60px;
+	margin: 20px; */
+	
+	color: white;
+	float: left;
+	height: 60px;
+	box-shadow: azure;
+	position: absolute;
+	height: 80px;
+	padding: 150px;
+	padding-left: 250px;
+	font-family: cursive;
+	font-size: 36px;
+}
+
+.shop_login {
+	height: 212px;
+	border: 6px solid white;
+	width: 422px;
+	position: absolute;
+	float: left;
+	margin: 130px;
+	margin-left: 470px;
+	background-color: darkcyan;
+}
+
+.shop_login form ul {
+	list-style: none;
+}
+
+.shop_login form ul li {
+	margin: 10px;
+}
+
+.shop_login form ul li input {
+	height: 42px;
+	width: 298px;
+	font-family: cursive;
+	font-size: 15px;
+}
+
+#alert_msg {
+	color: rgb(190, 35, 35);
+	padding-left: 74px;
+}

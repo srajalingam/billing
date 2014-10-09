@@ -1,0 +1,9 @@
+
+
+.dashboard {
+	border: 2px solid red;
+	float: left;
+	height: 200px;
+	width: 253px;
+	margin: 25px;
+}

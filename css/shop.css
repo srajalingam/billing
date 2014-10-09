@@ -1,0 +1,109 @@
+body {
+	height: auto;
+	/* background: #edeff1; */
+	color: #4d4d4d;
+	min-width: 1024px;
+}
+
+.container {
+	height: 100%;
+	width: 100%;
+	min-width: 1024px;
+	padding: 0px;
+	margin:0px;
+	background: #eaeaea;
+}
+
+.header {
+	height: 68px;
+	width: 100%;
+	background-color: #2f2f2f;
+	color: white;
+	/* font-size: 35px; */
+	/* margin:0px; */
+}
+
+#shop_logo {
+	color: white;
+	float: left;
+	height: 20px;
+	padding: 9px;
+	padding-left: 36px;
+	font-family: cursive;
+	font-size: 31px;
+}
+
+#shop_head {
+	color: white;
+	float: left;
+	height: 35px;
+	margin: 16px;
+	margin-left: 337px;
+	font-family: times new roman;
+	font-size: 33px;
+	position: relative;
+}
+
+.side_menu {
+	margin: 10px;
+	float: left;
+	width: 240px;
+	border: 2px solid green;
+	height: 520px;
+	background-color: #edeff1;
+}
+
+.user_profile {
+	border: 2px solid red;
+	height: 237px;
+	background: white;
+}
+
+#user_image {
+	border: 3px solid blue;
+	height: 134px;
+	margin: 25px;
+	background: steelblue;
+}
+
+#user_name {
+	font-family: sans-serif;
+	font-size: 25px;
+	padding-left: 22px;
+}
+
+.navigation {
+	
+}
+
+.navigation ul {
+
+}
+
+.navigation ul li {
+	list-style: none;
+	padding: 20px;
+	border: 1px solid;
+}
+
+.navigation ul li a {
+	text-decoration: none;
+	color: black;
+}
+
+.content {
+	border: 2px solid;
+	float: left;
+	height: 520px;
+	width: 921px;
+	margin: 10px;
+}
+
+.footer {
+	border: 2px solid red;
+	float: left;
+	height: 58px;
+	width: inherit;
+	background: #2f2f2f;
+	color: white;
+}

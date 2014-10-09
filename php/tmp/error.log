@@ -1,0 +1,37 @@
+[11-Jul-2014 23:55:45 Asia/Calcutta] Server error occured in D:\wamp\www\git\billing\php\request.php on line no 53 and the message is Request method not found check again
+[12-Jul-2014 14:18:08 Asia/Calcutta] PHP Warning:  PDO::setAttribute() expects exactly 2 parameters, 1 given in D:\wamp\www\git\billing\php\lib\db.php on line 7
+[12-Jul-2014 14:18:08 Asia/Calcutta] PHP Stack trace:
+[12-Jul-2014 14:18:08 Asia/Calcutta] PHP   1. {main}() D:\wamp\www\git\billing\php\request.php:0
+[12-Jul-2014 14:18:08 Asia/Calcutta] PHP   2. Controller->__construct() D:\wamp\www\git\billing\php\request.php:16
+[12-Jul-2014 14:18:08 Asia/Calcutta] PHP   3. Model->__construct() D:\wamp\www\git\billing\php\controller.php:17
+[12-Jul-2014 14:18:08 Asia/Calcutta] PHP   4. DB->__construct() D:\wamp\www\git\billing\php\model.php:12
+[12-Jul-2014 14:18:08 Asia/Calcutta] PHP   5. PDO->setAttribute() D:\wamp\www\git\billing\php\lib\db.php:7
+[12-Jul-2014 14:18:14 Asia/Calcutta] PHP Warning:  PDO::setAttribute() expects exactly 2 parameters, 1 given in D:\wamp\www\git\billing\php\lib\db.php on line 7
+[12-Jul-2014 14:18:14 Asia/Calcutta] PHP Stack trace:
+[12-Jul-2014 14:18:14 Asia/Calcutta] PHP   1. {main}() D:\wamp\www\git\billing\php\request.php:0
+[12-Jul-2014 14:18:14 Asia/Calcutta] PHP   2. Controller->__construct() D:\wamp\www\git\billing\php\request.php:16
+[12-Jul-2014 14:18:14 Asia/Calcutta] PHP   3. Model->__construct() D:\wamp\www\git\billing\php\controller.php:17
+[12-Jul-2014 14:18:14 Asia/Calcutta] PHP   4. DB->__construct() D:\wamp\www\git\billing\php\model.php:12
+[12-Jul-2014 14:18:14 Asia/Calcutta] PHP   5. PDO->setAttribute() D:\wamp\www\git\billing\php\lib\db.php:7
+[13-Jul-2014 12:33:15 Asia/Calcutta] Server error occured in D:\wamp\www\git\billing\php\request.php on line no 62 and the message is Invalid request try again
+[13-Jul-2014 13:12:49 Asia/Calcutta] Server error occured in D:\wamp\www\git\billing\php\request.php on line no 80 and the message is Invalid request try again
+[13-Jul-2014 13:13:13 Asia/Calcutta] PHP Fatal error:  Call to undefined method Exception::logException() in D:\wamp\www\git\billing\php\controller.php on line 157
+[13-Jul-2014 13:13:13 Asia/Calcutta] PHP Stack trace:
+[13-Jul-2014 13:13:13 Asia/Calcutta] PHP   1. {main}() D:\wamp\www\git\billing\php\request.php:0
+[13-Jul-2014 13:13:13 Asia/Calcutta] PHP   2. Controller->addItem() D:\wamp\www\git\billing\php\request.php:61
+[13-Jul-2014 13:24:30 Asia/Calcutta] Server error occured in D:\wamp\www\git\billing\php\request.php on line no 77 and the message is Request method not found check again
+[13-Jul-2014 13:24:45 Asia/Calcutta] Server error occured in D:\wamp\www\git\billing\php\request.php on line no 77 and the message is Request method not found check again
+[13-Jul-2014 13:24:53 Asia/Calcutta] Server error occured in D:\wamp\www\git\billing\php\request.php on line no 77 and the message is Request method not found check again
+[13-Jul-2014 13:25:30 Asia/Calcutta] Server error occured in D:\wamp\www\git\billing\php\request.php on line no 77 and the message is Request method not found check again
+[13-Jul-2014 13:28:14 Asia/Calcutta] Server error occured in D:\wamp\www\git\billing\php\request.php on line no 77 and the message is Request method not found check again
+[25-Sep-2014 20:56:08 Asia/Calcutta] PHP Fatal error:  Uncaught exception 'PDOException' with message 'SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: NO)' in D:\wamp\www\demo\billing\php\lib\db.php:6
+Stack trace:
+#0 D:\wamp\www\demo\billing\php\lib\db.php(6): PDO->__construct('mysql:host=loca...', 'root', '')
+#1 D:\wamp\www\demo\billing\php\model.php(12): DB->__construct()
+#2 D:\wamp\www\demo\billing\php\controller.php(17): Model->__construct()
+#3 D:\wamp\www\demo\billing\php\request.php(16): Controller->__construct()
+#4 {main}
+  thrown in D:\wamp\www\demo\billing\php\lib\db.php on line 6
+[03-Oct-2014 14:43:58 Europe/Paris] PHP Parse error:  syntax error, unexpected '}' in D:\wamp\www\git\billing\php\controller\shop.php on line 29
+[03-Oct-2014 14:43:58 Europe/Paris] PHP Stack trace:
+[03-Oct-2014 14:43:58 Europe/Paris] PHP   1. {main}() D:\wamp\www\git\billing\php\request.php:0
