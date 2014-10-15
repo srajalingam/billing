@@ -56,25 +56,18 @@
 			// check the post request data is set or not
 			if(is_array($_POST) && count($_POST) > 0) {
 				// check the session is set or not
-				if(isset($_SESSION) && isset($_SESSION['shop_id'])) {
+				if(isset($_SESSION) && isset($_SESSION['shop_bill_shop_id'])) {
 					// check the request session id and emp id is valid for current session
-					if(session_id() == $_POST['session_id'] && $_SESSION['shop_id'] == $_POST['shop_id']) {
+					if(session_id() == $_POST['session_id'] && $_SESSION['shop_bill_shop_id'] == $_POST['shop_id']) {
 						return "success";
 					} else {
-						// remove the cookie details
-						/* foreach($_COOKIE as $key=>$value) {
-							if($key == "remember_username" || $key == "remember_me") continue;
-							else setcookie($key, "", time()-3600, "/", NULL);
-						} */
+						
 						$this -> status = "session";
 						return "Invalid session id Login again to continue";
 					}
 				} else {
 					// remove the cookie details
-					/* foreach($_COOKIE as $key=>$value) {
-						if($key == "remember_username" || $key == "remember_me") continue;
-						else setcookie($key, "", time()-3600, "/", NULL);
-					} */
+					
 					$this -> status = "session";
 					return "Session data not found login again";
 				}

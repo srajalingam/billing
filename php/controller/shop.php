@@ -21,6 +21,15 @@
 						$shop_login = $this -> model -> shopLogin($user_name, $hash_pwd);
 						if(is_array($shop_login) && count($shop_login) > 0) {
 							if($shop_login['active'] == 1) {
+								// set the session and cookie of shop and user details
+								$_SESSION['shop_bill_shop_id'] = $shop_login['shop_id'];
+								$_SESSION['shop_bill_user_name'] = $shop_login['shop_username'];
+								$_SESSION['shop_bill_shop_name'] = $shop_login['name'];
+								
+								// set shop name and log in details in cookie also
+								setcookie("sb_shop_name", $shop_login['name'], time()+3400, "/", NULL);
+								setcookie("sb_shop_id", $shop_login['shop_id'], time()+3400, "/", NULL);
+								setcookie("sb_logged_in", 1, time()+3400, "/", NULL);
 								header("Location:".URL."/dashboard.php");
 								exit;
 							} else {
@@ -97,14 +106,14 @@
 			} catch(MyException $ex) {
 				$ex->logException();
 				$response = array(
-									'status' => "fail",
+									'status' => $this -> status,
 									'errors' => $this->errors,
 									'message' => $ex->getMessage()
 								);
 				return json_encode($response);
 			} catch(Exception $ex) {
 				$response = array(
-									'status' => "fail",
+									'status' => $this -> status,
 									'errors' => $this->errors,
 									'message' => $ex->getMessage()
 								);
@@ -131,13 +140,13 @@
 			} catch(MyException $ex) {
 				$ex->logException();
 				$response = array(
-									'status' => "fail",
+									'status' => $this -> status,
 									'message' => $ex->getMessage()
 								);
 				return json_encode($response);
 			} catch(Exception $ex) {
 				$response = array(
-									'status' => "fail",
+									'status' => $this -> status,
 									'message' => $ex->getMessage()
 								);
 				return json_encode($response);
