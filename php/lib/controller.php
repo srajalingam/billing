@@ -42,10 +42,10 @@
  *  desc : validate controller get instantiated and return the object of validate controller
  *  result : return the object of validation instance object 
  */
-		// public function validate() {
+		/* public function validate() {
 			
-			// return 
-		// }
+			return 
+		} */
 		
 /**
  *  func : function to check the session data and all user input data
@@ -58,7 +58,8 @@
 				// check the session is set or not
 				if(isset($_SESSION) && isset($_SESSION['shop_bill_shop_id'])) {
 					// check the request session id and emp id is valid for current session
-					if(session_id() == $_POST['session_id'] && $_SESSION['shop_bill_shop_id'] == $_POST['shop_id']) {
+					 // && $_SESSION['shop_bill_shop_id'] == $_POST['shop_id']
+					if(session_id() == $_POST['session_id']) {
 						return "success";
 					} else {
 						

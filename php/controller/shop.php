@@ -28,7 +28,7 @@
 								
 								// set shop name and log in details in cookie also
 								setcookie("sb_shop_name", $shop_login['name'], time()+3400, "/", NULL);
-								setcookie("sb_shop_id", $shop_login['shop_id'], time()+3400, "/", NULL);
+								// setcookie("sb_shop_id", $shop_login['shop_id'], time()+3400, "/", NULL);
 								setcookie("sb_logged_in", 1, time()+3400, "/", NULL);
 								header("Location:".URL."/dashboard.php");
 								exit;

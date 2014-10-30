@@ -22,7 +22,7 @@
  *  desc : collect all the error message with <p> tag so will display in new line
  *  result : true or false for any data fails
  */
-		public function validate($data, $arr_rules) {
+		public function validator($data, $arr_rules) {
 			$valid = TRUE;
 			if(is_array($arr_rules)) {
 				foreach($arr_rules as $field => $rules) {

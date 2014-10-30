@@ -2,13 +2,26 @@
  *  Items page functionalities goes here
  */
  
+ 	function readCookie(name) {
+		var nameEQ = escape(name) + "=";
+		var ca = document.cookie.split(';');
+		for (var i = 0; i < ca.length; i++) {
+			var c = ca[i];
+			while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+			if (c.indexOf(nameEQ) === 0) return unescape(c.substring(nameEQ.length, c.length));
+		}
+		return null;
+	}
+	
  // get all the inserted item details on page load
 	$(window).on("load", function() {
+		var session_value = readCookie("PHPSESSID");
 		$.ajax({
 			url: "php/request.php?c=items",
 			type: "POST",
 			data: {
-				mtd: "allItems"
+				mtd: "allItems",
+				session_id: session_value
 			},
 			success: function(result) {
 				var obj_result = $.parseJSON(result);
@@ -103,8 +116,10 @@
 	}
 	
 	var itemInsertion = function() {
+		var session_value = readCookie("PHPSESSID");
 		itemData = {
 			mtd: "addItem",
+			session_id: session_value,
 			name: $("#name").val(),
 			category: $("#category").val(),
 			// sub_category: $("#sub_category").val(),
