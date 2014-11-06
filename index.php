@@ -6,7 +6,8 @@
 		<script type="text/javascript" src="js/lib/jquery.cookie.js"></script>
 	</head>
 	<body>
-			<div cass="content">
+		<div class="container">
+			<div class="content">
 				<div class="shop_logo">
 					Shop & Bill
 				</div>
@@ -22,6 +23,7 @@
 					<p id="alert_msg"></p>
 				</div>
 			</div>
+		</div>
 			<script src="js/index.js"></script>
 	</body>
 </html>

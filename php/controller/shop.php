@@ -25,6 +25,7 @@
 								$_SESSION['shop_bill_shop_id'] = $shop_login['shop_id'];
 								$_SESSION['shop_bill_user_name'] = $shop_login['shop_username'];
 								$_SESSION['shop_bill_shop_name'] = $shop_login['name'];
+								$_SESSION['shop_bill_user_log'] = 1;
 								
 								// set shop name and log in details in cookie also
 								setcookie("sb_shop_name", $shop_login['name'], time()+3400, "/", NULL);
@@ -55,6 +56,45 @@
 			}
 		} 
 
+		public function checkLogIN() {
+			try {
+				if(isset($_SESSION['shop_bill_shop_id']) && isset($_SESSION['shop_bill_user_log'])) {
+					if($_SESSION['shop_bill_user_log'] === 1) {
+						$result = array(
+											'status' => "success",
+											'response' => array('msg' => "Logged in successfully")
+										);
+						return json_encode($result);
+					} else {
+						throw new Exception("Please login to access show and bill"); 
+					}
+				} else {
+					throw new Exception("Please login to access show and bill");
+				}
+			} catch(MyException $ex) {
+				$ex->logException();
+				setcookie("alert", $mex -> getMessage(), time()+1200, "/", NULL);
+				$result = array(
+								'status' => $this -> status,
+								'response' => array(
+													'errors' => $this->errors,
+													'msg' => $ex->getMessage()
+												)
+							);
+				return json_encode($result);
+			} catch(Exception $ex) {
+				setcookie("alert", $mex -> getMessage(), time()+1200, "/", NULL);
+				$result = array(
+								'status' => $this -> status,
+								'response' => array(
+													'errors' => $this->errors,
+													'msg' => $ex->getMessage()
+												)
+							);
+				return json_encode($result);
+			}
+		}
+		
 /**
  *  func : add new shop details 
  */
@@ -97,7 +137,7 @@
 						} else {
 							$response = array(
 											'status' => "success",
-											'message' => "Shop details inserted successfully"
+											'response' => array('msg' => "Shop details inserted successfully")
 										);
 							return json_encode($response);
 						}
@@ -105,21 +145,24 @@
 				}
 			} catch(MyException $ex) {
 				$ex->logException();
-				$response = array(
-									'status' => $this -> status,
-									'errors' => $this->errors,
-									'message' => $ex->getMessage()
-								);
-				return json_encode($response);
+				$result = array(
+								'status' => $this -> status,
+								'response' => array(
+													'errors' => $this->errors,
+													'msg' => $ex->getMessage()
+												)
+							);
+				return json_encode($result);
 			} catch(Exception $ex) {
-				$response = array(
-									'status' => $this -> status,
-									'errors' => $this->errors,
-									'message' => $ex->getMessage()
-								);
-				return json_encode($response);
+				$result = array(
+								'status' => $this -> status,
+								'response' => array(
+													'errors' => $this->errors,
+													'msg' => $ex->getMessage()
+												)
+							);
+				return json_encode($result);
 			}
-			
 		}
 
 /**
@@ -131,7 +174,7 @@
 				if(is_array($arr_shops) && count($arr_shops) > 0) {
 					$response = array(
 										'status' => "success",
-										'message' => $arr_shops
+										'response' => array('msg' => $arr_shops)
 									);
 					return json_encode($response);
 				} else {
@@ -139,18 +182,33 @@
 				}
 			} catch(MyException $ex) {
 				$ex->logException();
-				$response = array(
-									'status' => $this -> status,
-									'message' => $ex->getMessage()
-								);
-				return json_encode($response);
+				$result = array(
+								'status' => $this -> status,
+								'response' => array(
+													'errors' => $this->errors,
+													'msg' => $ex->getMessage()
+												)
+							);
+				return json_encode($result);
 			} catch(Exception $ex) {
-				$response = array(
-									'status' => $this -> status,
-									'message' => $ex->getMessage()
-								);
-				return json_encode($response);
+				$result = array(
+								'status' => $this -> status,
+								'response' => array(
+													'errors' => $this->errors,
+													'msg' => $ex->getMessage()
+												)
+							);
+				return json_encode($result);
 			}
 		}
 		
+		public function logout() {
+			setcookie("sb_shop_name", "", time()-3400, "/", NULL);
+			// setcookie("sb_shop_id", $shop_login['shop_id'], time()+3400, "/", NULL);
+			setcookie("sb_logged_in", "", time()-3400, "/", NULL);
+			
+			session_destroy();
+			echo json_encode(array('status' => "success", 'msg' => "logged out successfully."));
+		}
+	
 	}

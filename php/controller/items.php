@@ -34,17 +34,23 @@
 				}
 			} catch(MyException $ex) {
 				$ex->logException();
-				$response = array(
-									'status' => $this -> status,
-									'message' => $ex->getMessage()
-								);
-				return json_encode($response);
+				$result = array(
+								'status' => $this -> status,
+								'response' => array(
+													'errors' => $this->errors,
+													'msg' => $ex->getMessage()
+												)
+							);
+				return json_encode($result);
 			} catch(Exception $ex) {
-				$response = array(
-									'status' => $this -> status,
-									'message' => $ex->getMessage()
-								);
-				return json_encode($response);
+				$result = array(
+								'status' => $this -> status,
+								'response' => array(
+													'errors' => $this->errors,
+													'msg' => $ex->getMessage()
+												)
+							);
+				return json_encode($result);
 			}
 		}
 		
@@ -75,19 +81,23 @@
 				}
 			} catch(MyException $ex) {
 				$ex->logException();
-				$response = array(
-									'status' => $this -> status,
-									'errors' => $this->errors,
-									'message' => $ex->getMessage()
-								);
-				return json_encode($response);
+				$result = array(
+								'status' => $this -> status,
+								'response' => array(
+													'errors' => $this->errors,
+													'msg' => $ex->getMessage()
+												)
+							);
+				return json_encode($result);
 			} catch(Exception $ex) {
-				$response = array(
-									'status' => $this -> status,
-									'errors' => $this->errors,
-									'message' => $ex->getMessage()
-								);
-				return json_encode($response);
+				$result = array(
+								'status' => $this -> status,
+								'response' => array(
+													'errors' => $this->errors,
+													'msg' => $ex->getMessage()
+												)
+							);
+				return json_encode($result);
 			}
 		}
 		
@@ -147,20 +157,29 @@
 				}
 			} catch(MyException $ex) {
 				$ex->logException();
-				$response = array(
-									'status' => $this -> status,
-									'errors' => $this->errors,
-									'message' => $ex->getMessage()
-								);
-				return json_encode($response);
+				$result = array(
+								'status' => $this -> status,
+								'response' => array(
+													'errors' => $this->errors,
+													'msg' => $ex->getMessage()
+												)
+							);
+				return json_encode($result);
 			} catch(Exception $ex) {
-				$response = array(
-									'status' => $this -> status,
-									'errors' => $this->errors,
-									'message' => $ex->getMessage()
-								);
-				return json_encode($response);
+				$result = array(
+								'status' => $this -> status,
+								'response' => array(
+													'errors' => $this->errors,
+													'msg' => $ex->getMessage()
+												)
+							);
+				return json_encode($result);
 			}
+		}
+		
+		public function allItemsStock($shop_id) {
+			$arr_items = $this -> model -> getAllItems($shop_id);
+			return $arr_items;
 		}
 	
 	}

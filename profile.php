@@ -2,7 +2,7 @@
 	<head>
 		<title>Shop & Bill</title>
 		<link rel="stylesheet" href="css/shop.css">
-		<link rel="stylesheet" href="css/stock.css">
+		<link rel="stylesheet" href="css/profile.css">
 		<script type="text/javascript" src="js/lib/jquery-1.9.1.js"></script>
 		<script type="text/javascript" src="js/lib/jquery.cookie.js"></script>
 	</head>
@@ -38,39 +38,21 @@
 				
 				<div class="navigation">
 					<ul>
-						<li id="dashboard" class="active"> Dashboard </li>
-						<li id="profile" > Profile </li>
+						<li id="dashboard"> Dashboard </li>
+						<li id="profile" class="active"> Profile </li>
 						<li id="logout"> Logout </li>
 					</ul>
 				</div>
 			</div>
 			<div class="content">
-				<div id="all_stocks">
-					<table border="1">
-						<tbody id="all_stocks_table">
-							<tr>
-								<th rowspan="2">Item Name</th>
-								<th rowspan="2">Category</th>
-								<!--<th rowspan="2">Sub-Category</th>-->
-								<th rowspan="2">Product</th>
-								<th colspan="2">Quantity</th>
-								<th rowspan="2">Rate</th>
-								<th rowspan="2">Balance</th>
-							</tr>
-							<tr>
-								<th>Value</th>
-								<th>Unit</th>
-							</tr>
-						</tbody>
-					</table>
-				</div>
+				
 			</div>
 		</div>
 		<div class="footer">
 			Footer
 		</div>
-		
+	
 		<script src="js/shop.js"></script>
-		<script src="js/stock.js"></script>
+		<script src="js/profile.js"></script>
 	</body>
 </html>

@@ -1,17 +1,11 @@
 body {
 	height: auto;
-	/* background: #edeff1; */
-	color: #4d4d4d;
-	min-width: 1024px;
-}
-
-.container {
-	height: 100%;
 	width: 100%;
-	min-width: 1024px;
+	background: #edeff1;
+	/* color: #4d4d4d; */
+	min-width: 1200px;
+	margin: 0px;
 	padding: 0px;
-	margin:0px;
-	background: #eaeaea;
 }
 
 .header {
@@ -44,26 +38,73 @@ body {
 	position: relative;
 }
 
+#menu {
+	float: right;
+	border: 1px solid white;
+	position: relative;
+	margin-top: 21px;
+	padding: 4px;
+	margin-right: 56px;
+}
+
+#menu_list {
+	display: none;
+	position: absolute;
+	right : 40px;
+	top : 63px;
+	border: 2px solid black;
+	background: white;
+	color: black;
+}
+
+#menu_list ul {
+	padding: 9px;
+	margin: 5px;
+}
+
+#menu_list ul li {
+	list-style : none;
+	padding : 5px;
+	padding-left: 0px;
+	/* border: 1px solid red; */
+}
+
+#menu_list ul li a {
+	text-decoration: none;
+	font-family: cursive;
+	font-size: 15px;
+}
+
+.container {
+	height: 560px;
+	padding-left: 25px;
+	/* border: 2px solid red; */
+	/* width: 100%; */
+}
+
 .side_menu {
+	position: relative;
 	margin: 10px;
 	float: left;
 	width: 240px;
-	border: 2px solid green;
+	border: 2px solid #2f2f2f;
 	height: 520px;
-	background-color: #edeff1;
 }
 
 .user_profile {
-	border: 2px solid red;
-	height: 237px;
+	border: 2px solid white;
+	height: 267px;
 	background: white;
 }
 
 #user_image {
-	border: 3px solid blue;
-	height: 134px;
+	height: 174px;
 	margin: 25px;
 	background: steelblue;
+}
+
+#user_image img {
+	margin: 31px;
 }
 
 #user_name {
@@ -73,37 +114,44 @@ body {
 }
 
 .navigation {
-	
+	margin-top: 42px;
 }
 
 .navigation ul {
+	padding-left: 0px;
+}
 
+.navigation ul .active {
+	background-color: steelblue;
+	color: white;
 }
 
 .navigation ul li {
 	list-style: none;
 	padding: 20px;
-	border: 1px solid;
-}
-
-.navigation ul li a {
-	text-decoration: none;
-	color: black;
+	border: 2px solid #edeff1;
+	background-color: white;
+	color: steelblue;
+	font-size: 18px;
+	text-align: center;
+	font-family: cursive;
 }
 
 .content {
-	border: 2px solid;
+	position: relative;
+	border: 2px solid #2f2f2f;
 	float: left;
 	height: 520px;
-	width: 921px;
+	width: 920px;
 	margin: 10px;
 }
 
 .footer {
-	border: 2px solid red;
-	float: left;
+	/* border: 2px solid red; */
+	/* float: left; */
 	height: 58px;
-	width: inherit;
+	width: 100%;
 	background: #2f2f2f;
 	color: white;
+	position: relative;
 }

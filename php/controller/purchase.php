@@ -60,17 +60,23 @@
 				}
 			} catch(MyException $ex) {
 				$ex->logException();
-				$response = array(
-									'status' => $this -> status,
-									'message' => $ex->getMessage()
-								);
-				return json_encode($response);
+				$result = array(
+								'status' => $this -> status,
+								'response' => array(
+													'errors' => $this->errors,
+													'msg' => $ex->getMessage()
+												)
+							);
+				return json_encode($result);
 			} catch(Exception $ex) {
-				$response = array(
-									'status' => $this -> status,
-									'message' => $ex->getMessage()
-								);
-				return json_encode($response);
+				$result = array(
+								'status' => $this -> status,
+								'response' => array(
+													'errors' => $this->errors,
+													'msg' => $ex->getMessage()
+												)
+							);
+				return json_encode($result);
 			}
 		}
 		
@@ -122,6 +128,9 @@
 						$this -> errors = $this -> validate -> errors;
 						throw new Exception("Please fill all the required fields");
 					} else {
+					
+						// change the date format before insert in DB
+						$purchase_data['purchase_date'] = date('Y-m-d', strtotime($purchase_data['purchase_date']));
 						$item_list = [];
 						// validate the purchase items
 						$arr_items = $_POST['items'];
@@ -184,17 +193,23 @@
 				}
 			} catch(MyException $ex) {
 				$ex->logException();
-				$response = array(
-									'status' => $this -> status,
-									'message' => $ex->getMessage()
-								);
-				return json_encode($response);
+				$result = array(
+								'status' => $this -> status,
+								'response' => array(
+													'errors' => $this->errors,
+													'msg' => $ex->getMessage()
+												)
+							);
+				return json_encode($result);
 			} catch(Exception $ex) {
-				$response = array(
-									'status' => $this -> status,
-									'message' => $ex->getMessage()
-								);
-				return json_encode($response);
+				$result = array(
+								'status' => $this -> status,
+								'response' => array(
+													'errors' => $this->errors,
+													'msg' => $ex->getMessage()
+												)
+							);
+				return json_encode($result);
 			}
 		}
 	

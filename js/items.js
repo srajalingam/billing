@@ -52,6 +52,16 @@
 		});
 	});
 	
+	$("#create_item").on("click", function() {
+		$("#all_items").hide();
+		$("#new_item").show();
+	});
+	
+	$("#back_item_list").on("click", function() {
+		$("#all_items").show();
+		$("#new_item").hide();
+	});
+	
 // validate and insert the new item
 	$("#item_submit").on("click", function(e) {
 		e.preventDefault();

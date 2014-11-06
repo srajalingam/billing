@@ -1,44 +1,38 @@
 body {
 	height: auto;
-	/* width: 1250px; */
-	padding-left: 5px;
-	/* background-image: url("../images/bg.png"); */
+	/* width: 100%; */
 	background: #2f2f2f;
 }
 
+.container {
+	position: relative;
+}
+
 .content {
-	float: left;
-	/* margin: 20px; */
-	padding-top: 50%;
+	height: 250px;
+	margin: 0px auto;
+	width: 810px;
+	padding: 0 20px 0 20px;
 }
 
 .shop_logo {
-	/* color: white;
+	width: 250px;
+	height: 95px;
 	float: left;
-	height: 60px;
-	margin: 20px; */
-	
+	margin-top: 260px;
 	color: white;
-	float: left;
-	height: 60px;
-	box-shadow: azure;
-	position: absolute;
-	height: 80px;
-	padding: 150px;
-	padding-left: 250px;
 	font-family: cursive;
 	font-size: 36px;
 }
 
 .shop_login {
-	height: 212px;
-	border: 6px solid white;
-	width: 422px;
-	position: absolute;
-	float: left;
-	margin: 130px;
-	margin-left: 470px;
 	background-color: darkcyan;
+	padding: 20px 60px 40px 0px;
+	width: 330px;
+	border: 6px solid white;
+	float: left;
+	
+	margin-top: 200px;
 }
 
 .shop_login form ul {
@@ -46,7 +40,7 @@ body {
 }
 
 .shop_login form ul li {
-	margin: 10px;
+	margin: 8px;
 }
 
 .shop_login form ul li input {
