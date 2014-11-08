@@ -44,7 +44,7 @@
 				</div>
 			</div>
 			<div class="content">
-				
+				<h1>GitHub Changes</h1>
 			</div>
 		</div>
 			<div class="footer">
